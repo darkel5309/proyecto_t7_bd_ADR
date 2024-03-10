@@ -1,0 +1,22 @@
+CLIENTE (id,dni,nombre,apellidos,telefono)
+	PK(id)
+
+CATEGORIA (id,temporada,tipo)
+	PK(id)
+
+PRODUCTO (id,cod_barras,precio,descuento,talla,color,id_categoria)
+	PK(id)
+	FK(id_categoria-->CATEGORIA)
+
+COMPRA (fecha_compra, id_cliente,id_producto)
+	PK(fecha_compra,id_cliente,id_producto)
+	FK(id_cliente-->CLIENTE)
+	FK(id_producto-->PRODUCTO)
+
+LICENCIA(id,nombre,origen)
+	PK(id)
+
+ADQUISICION (fecha_adquisicion,id_producto,id_licencia)
+    	PK(fecha_adquisicion,id_producto,id_licencia)
+	FK(id_producto-->PRODUCTO)
+	FK(id_licencia-->LICENCIA)
